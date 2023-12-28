@@ -1,0 +1,8 @@
+{
+  "apis":[
+    {
+      "swagger_file":"api-reg-demo-service_v1.0.0.0.json",
+      "url":"http://127.0.0.1:8081"
+    }
+  ]
+}
