@@ -4,8 +4,31 @@ Large Language Models(LLMs) combined with private domain data bring huge value. 
 Many systems provide various APIs, and some APIs can add, obtain, update or delete data(CRUD) in the service based on parameters. Some APIs can accomplish certain tasks. If the LLMs can understand the business functions and parameters of the API by themeselves, LLMs can be combined with the API to complete user queries. Swagger is a very popular library that helps developers generate API documentation and a visualization API teat tools. This project uses the large model to read the Swagger document to understand the business and parameters of the API, and automatically execute the user's query based on the understanding. It helps LLMs  implement API-based RAG. API-based Agent.
 
 ## How to use it
-Use API RAG just with below code:
+Use API RAG as following steps
+- Put your swagger json files under swagger_files folder
+- Update your service and swagger files' name in api_metadata.json as follow format:
+```sh
+  {
+  "apis":[
+    {
+      "swagger_file":"api-reg-demo-service_v1.0.0.0.json",
+      "url":"http://127.0.0.1:8080"
+    }
+  ]
+}
+```
+- add your open.ai API key and select your major language(en_us or zh_cn) in swagger files. in config/DockerConfig.py
+```sh
+  GPT_API_KEY = MyEnvironment().get_environment_variable("OPENAPI_API_KEY", 'Your open ai key')
+  PROMPT_LANGUAGE = MyEnvironment().get_environment_variable("PROMPT_LANGUAGE", "zh_cn")
+```
+- Use APIRAG with following code
+```sh
 from api_rag.api_rag_model import APIRAGModel
 api_rag_model = APIRAGModel()
-api_rag_model.predict(text,model_name)
+response = api_rag_model.predict(text,model_name)
+```
+
+## How to use it
+Please try to use 
 
