@@ -30,5 +30,5 @@ response = api_rag_model.predict(text,model_name)
 ```
 
 ## How to use it
-Please try to use 
+Please try to use [API RAG DEMO](https://github.com/onestepai/api_rag_demo) as test service.
 
