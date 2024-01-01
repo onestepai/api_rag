@@ -3,6 +3,10 @@ Large Language Models(LLMs) combined with private domain data bring huge value. 
 
 Many systems provide various APIs, and some APIs can add, obtain, update or delete data(CRUD) in the service based on parameters. Some APIs can accomplish certain tasks. If the LLMs can understand the business functions and parameters of the API by themeselves, LLMs can be combined with the API to complete user queries. Swagger is a very popular library that helps developers generate API documentation and a visualization API teat tools. This project uses the large model to read the Swagger document to understand the business and parameters of the API, and automatically execute the user's query based on the understanding. It helps LLMs  implement API-based RAG. API-based Agent.
 
+![image](https://github.com/onestepai/api_rag/assets/107015943/efa56206-6628-4587-8290-7e85e5e625db)
+
+
+
 ## How to use it
 Use API RAG as following steps
 - Put your swagger json files under swagger_files folder
